@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Definition of Terms - Indigenous Peoples</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background: #f7f3e9;
+        color: #333;
+        line-height: 1.7;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    h1, h2, h3 {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: center;
+        background: #5c3d2e;
+        padding: 18px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    .nav a {
+        color: white;
+        margin: 0 25px;
+        font-weight: 600;
+        transition: color 0.3s;
+    }
+    .nav a.active, .nav a:hover {
+        color: #ffd700;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 50px auto;
+        padding: 0 20px;
+    }
+
+    .term-card {
+        background: white;
+        padding: 25px 30px;
+        border-radius: 15px;
+        margin-bottom: 30px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s ease-in-out;
+    }
+
+    .term-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .term-card h3 {
+        margin-top: 0;
+        color: #4b5320;
+    }
+
+    .references {
+        background: #e3d5ca;
+        padding: 20px 25px;
+        border-radius: 12px;
+        margin-top: 40px;
+        font-size: 15px;
+    }
+
+    .references a {
+        color: #5c3d2e;
+        font-weight: 500;
+        text-decoration: underline;
+        transition: color 0.3s;
+    }
+    .references a:hover {
+        color: #d8a657;
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 60px;
+        padding: 20px 0;
+        color: #777;
+        font-size: 14px;
+    }
+
+    @media (max-width:768px) {
+        .container {
+            padding: 0 15px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<div class="nav">
+    <a href="index.html">Home</a>
+    <a href="information.html">Information</a>
+    <a href="laws.html">Laws</a>
+    <a href="definitionofterms.html" class="active">Definition of Terms</a>
+</div>
+
+<div class="container">
+    <h1 style="text-align:center; color:#4b5320; margin-bottom:50px;">Definition of Terms</h1>
+
+    <!-- Term 1 -->
+    <div class="term-card">
+        <h3>United Nations Declaration on the Rights of Indigenous Peoples (UNDRIP)</h3>
+        <p>
+            The most comprehensive international instrument on the rights of indigenous peoples. It establishes a universal framework of minimum standards for the survival, dignity, and well-being of Indigenous Peoples and elaborates on existing human rights standards and fundamental freedoms as they apply to indigenous communities.
+        </p>
+    </div>
+
+    <!-- Term 2 -->
+    <div class="term-card">
+        <h3>Indigenous Peoples' Rights Act of 1997 (IPRA)</h3>
+        <p>
+            An Act to recognize, protect, and promote the rights of Indigenous Cultural Communities/Indigenous Peoples. It establishes mechanisms for the recognition of ancestral domains, self-governance, cultural integrity, social justice, and ensures the protection of indigenous communities from discrimination and displacement.
+        </p>
+    </div>
+
+    <!-- Term 3 -->
+    <div class="term-card">
+        <h3>Free, Prior, and Informed Consent (FPIC)</h3>
+        <p>
+            The consensus of all members of the ICCs/IPs determined according to their customary laws and practices. FPIC must be free from external manipulation or coercion and obtained after fully disclosing the intent and scope of a plan, program, project, or activity, in a language and process understandable to the community.
+        </p>
+    </div>
+
+    <!-- References -->
+    <div class="references">
+        <h3>References:</h3>
+        <ul>
+            <li><a href="http://humanrights.gov.au" target="_blank">Human Rights Australia – UNDRIP</a></li>
+            <li><a href="https://www.officialgazette.gov.ph" target="_blank">Official Gazette – Indigenous Peoples' Rights Act of 1997</a></li>
+            <li><a href="https://www.ncip.gov.ph" target="_blank">National Commission on Indigenous Peoples (NCIP)</a></li>
+            <li><a href="https://www.un.org/esa/socdev/unpfii/documents/FAQsindigenousdeclaration.pdf" target="_blank">UNDRIP FAQ PDF</a></li>
+        </ul>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 Indigenous Peoples Rights Information. All rights reserved.
+</footer>
+
+<script>
+    // Scroll animation for term cards
+    const termCards = document.querySelectorAll('.term-card');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.2 });
+    termCards.forEach(card => observer.observe(card));
+</script>
+
+</body>
+</html>
